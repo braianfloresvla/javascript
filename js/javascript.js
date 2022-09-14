@@ -29,5 +29,3 @@ while(email=== ""){
 }
   let mEmail = `Muchas gracias ${nombre} dentro de las 24hs resiviras un EMAIL confirmando su reserva`;
   alert(mEmail);
-
-  aasdasdasd
