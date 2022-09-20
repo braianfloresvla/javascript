@@ -1,3 +1,4 @@
+function nombre(){
 let nombre = prompt("Ingrese el nombre");
 if(nombre === ""){
   alert("No ingresaste ningun nombre");
@@ -5,7 +6,7 @@ if(nombre === ""){
   let mensaje = `Bienvenido ${nombre}`;
   alert(mensaje);
 }
-
+}
 let cPersonas = prompt("Ingrese cantidad de personas");
 if(cPersonas === ""){
   alert("Cantidad invalida");
@@ -27,5 +28,6 @@ while(email=== ""){
   alert("Email incorrecto");
   email = prompt("Ingrese su email");
 }
-  let mEmail = `Muchas gracias ${nombre} dentro de las 24hs resiviras un EMAIL confirmando su reserva`;
+  let mEmail = `Muchas gracias` + nombre() + `dentro de las 24hs resiviras un EMAIL confirmando su reserva`;
   alert(mEmail);
+
