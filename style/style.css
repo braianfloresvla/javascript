@@ -644,6 +644,24 @@ figure.snip0016:hover figcaption::before {
     min-width: none;
     background-size: cover; } }
 
+@media (max-width: 900px) {
+  .parrafoIndex {
+    flex-direction: column; }
+  .fotoParrafo {
+    margin-left: 0;
+    width: 80%; }
+  .fondoMenu {
+    background-image: url(../images/menu900.jpg);
+    min-width: none; }
+  .containerParrafo {
+    width: 80%;
+    margin-left: 10%; }
+  .piePagina .grupo1 {
+    width: 90%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+    padding: 35px 0px; } }
+
 @media (max-width: 768px) {
   .containerGaleria {
     flex-direction: column;
