@@ -722,3 +722,10 @@ figure.snip0016:hover figcaption::before {
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 30px;
     padding: 35px 0px; } }
+
+.card {
+  background-color: #303030; }
+
+.btn-primary {
+  background-color: #000000;
+  border-color: white; }
