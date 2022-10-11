@@ -41,7 +41,8 @@ let carritoJSON = localStorage.getItem("carrito")
 if (carritoJSON !== null){
     carrito = JSON.parse(carritoJSON)
 }
-const divisa = 'ARS';
+
+const divisa = '$';
 const domItems = document.querySelector('#items')
 const domCarrito = document.querySelector('#carrito')
 const domTotal = document.querySelector('#total')
@@ -65,7 +66,7 @@ function motrarProductos(){
 
         const contentPrecio = document.createElement('p');
         contentPrecio.classList.add('card-text');
-        contentPrecio.textContent = `${info.precio}${divisa}`;
+        contentPrecio.textContent = `${divisa}${info.precio.toFixed(2)}`;
 
         const contentBoton = document.createElement('button');
         contentBoton.classList.add('btn', 'btn-primary');
@@ -102,7 +103,7 @@ function renderizadoDeCarrito(){
 
     const content = document.createElement('li')
     content.classList.add('list-group-item', 'text-right', 'mx-2');
-    content.textContent = `${cantidadUnidades} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
+    content.textContent = `${cantidadUnidades} x ${miItem[0].nombre} - ${divisa}${miItem[0].precio.toFixed(2)}`;
 
     const botonBorrar = document.createElement('button')
     botonBorrar.classList.add('btn', 'btn-danger', 'mx-5');
@@ -114,7 +115,7 @@ function renderizadoDeCarrito(){
     content.appendChild(botonBorrar);
     domCarrito.appendChild(content);
     });
-    domTotal.textContent = carcularTotal();
+    domTotal.textContent = `${divisa}${carcularTotal()}`;
 }
 
 function vaciarCarrito(evento){
@@ -138,6 +139,7 @@ function carcularTotal(){
 
 function vaciarCarritoTotal(){
     carrito = [];
+    localStorage.setItem("carrito", JSON.stringify(carrito))
     renderizadoDeCarrito();
 }
 
