@@ -36,8 +36,11 @@ const productosStock =[
         imagen: 'CheeseClazone.jpg'
     },
 ]
-
 let carrito = [];
+let carritoJSON = localStorage.getItem("carrito")
+if (carritoJSON !== null){
+    carrito = JSON.parse(carritoJSON)
+}
 const divisa = 'ARS';
 const domItems = document.querySelector('#items')
 const domCarrito = document.querySelector('#carrito')
@@ -82,6 +85,7 @@ function motrarProductos(){
 
 function agregarACarrito(evento){
     carrito.push(evento.target.getAttribute('marcador'))
+    localStorage.setItem("carrito", JSON.stringify(carrito))
     renderizadoDeCarrito();
 }
 
@@ -119,6 +123,7 @@ function vaciarCarrito(evento){
     carrito = carrito.filter((carritoId) =>{
         return carritoId !== id;
     });
+    localStorage.setItem("carrito", JSON.stringify(carrito))
     renderizadoDeCarrito();
 }
 
