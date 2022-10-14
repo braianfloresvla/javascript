@@ -47,6 +47,7 @@ const domItems = document.querySelector('#items')
 const domCarrito = document.querySelector('#carrito')
 const domTotal = document.querySelector('#total')
 const domBotonVaciar = document.querySelector('#botonVaciar')
+const domBotonConfirmar = document.querySelector('#confirmarPedido')
 
 function motrarProductos(){
     productosStock.forEach((info) => {
@@ -82,6 +83,20 @@ function motrarProductos(){
         domItems.appendChild(content)
     });
 
+}
+
+function confirmarEnvio(){
+    Swal.fire({
+        title: 'Desea confirmar el pedido?',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'Confirmar',
+    }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+        Swal.fire('Pedido confirmado!', '', 'success')
+        }
+    })
 }
 
 function agregarACarrito(evento){
@@ -144,6 +159,7 @@ function vaciarCarritoTotal(){
 }
 
 domBotonVaciar.addEventListener('click', vaciarCarritoTotal)
+domBotonConfirmar.addEventListener('click', confirmarEnvio)
 
 motrarProductos();
 renderizadoDeCarrito();
