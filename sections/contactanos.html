@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="../style/style.css">
     <!-- iconos -->
     <script src="https://kit.fontawesome.com/e57cb816f9.js" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+    emailjs.init('CoS-ozj5F_bAFD6MG')
+    </script>
 </head>
 
 <body>
@@ -54,42 +59,32 @@
             <h1>contactanos</h1>
             <p>Todo comienza contactandonos entre nosotros</p>
         </div>
-        <form class="contenedoresContactanos">
+        <form class="contenedoresContactanos" id="form">
             <div class="hijoContactanos1">
                 <div class="contenedorCampos">
                     <div>
-                        <label>Nombre y Apellido</label>
-                        <input type="text" name="nombreApellido" required placeholder="Nobre y Apellido">
+                        <label for="from_name">Nombre</label>
+                        <input type="text" name="from_name" id="from_name" required placeholder="Nobre">
                     </div>
                     <div>
-                        <label>Email</label>
-                        <input type="text" name="email" required placeholder="email@ejemplo.com">
+                        <label for="to_name">Apellido</label>
+                        <input type="text" name="to_name" id="to_name" required placeholder="Nobre">
                     </div>
                     <div>
-                        <label>Telefono</label>
-                        <input type="number" name="telefono" placeholder="+54 11 1234-5678">
-                    </div>
-                    <div>
-                        <label>Elige una opccion</label>
-                        <select name="opcionConsulta" id="opcionConsulta">
-                            <option value="null">Opciones</option>
-                            <option value="general">General</option>
-                            <option value="contrataciones">Contrataciones</option>
-                            <option value="sugerencias">sugerencias</option>
-                            <option value="quejas">Quejas</option>
-                        </select>
+                        <label for="reply_to">Email</label>
+                        <input type="text" name="reply_to" id="reply_to" required placeholder="email@ejemplo.com">
                     </div>
                 </div>
                 <div class="campoTexto">
-                    <label>Escribenos</label>
-                    <textarea type="text" name="contactanos" placeholder="Ingrese su consulta" required></textarea>
+                    <label for="message">Escribenos</label>
+                    <textarea type="text" name="message" id="message" required></textarea>
                 </div>
                 <div class="check">
                     <label for="acepta">Acepto los terminos y condiciones</label>
                     <input type="checkbox" name="Acepta" value="1" required>
                 </div>
                 <div class="divbotones">
-                    <input class="botonerForm" type="submit" value="Envian info">
+                    <input class="botonerForm" type="submit" id="button" value="Enviar Email">
                     <input class="botonerForm" type="reset" value="Borrar info">
                 </div>
             </div>
@@ -112,7 +107,7 @@
                 <div class="contenedorSub">
                     <p class="parrafoSub">Suscribete y recibe informacion sobre el menu del dia,
                         ofertas especiales o eventos especiales.</p>
-                    <input type="text" class="camposSub" name="nombreApellido" required placeholder="Email@ejemplo.com">
+                    <input type="text" class="camposSub" name="nombreApellido" placeholder="Email@ejemplo.com">
                     <input class="botonSub" type="submit" value="Susribirse">
                 </div>
             </div>
@@ -150,6 +145,7 @@
             <small>&copy; 2022 <b>Lapettit</b> - Todos los derechos reservados</small>
         </div>
     </footer>
+    <script src="../js/formulario.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
